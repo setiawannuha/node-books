@@ -9,6 +9,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get("/", (req, res) => {
+  res.json({
+    message: "success",
+  });
+});
+app.get("/books", (req, res) => {
   try {
     db.query(`SELECT * FROM tbl_books`, (err, result) => {
       if (err) {
