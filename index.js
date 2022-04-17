@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const db = require("./db");
-const { APP_PORT } = require("./env");
+const { PORT } = require("./env");
 
 const app = express();
 
@@ -27,7 +27,7 @@ app.get("/books", (req, res) => {
   }
 });
 
-const PORT = APP_PORT || 3003;
-app.listen(PORT, () => {
-  console.log(`service running on port ${PORT}`);
+const APP_PORT = PORT || 3003;
+app.listen(APP_PORT, () => {
+  console.log(`service running on port ${APP_PORT}`);
 });
