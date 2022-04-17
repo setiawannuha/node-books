@@ -12,6 +12,9 @@ const db = new Client({
   database: DB_NAME,
   password: DB_PASSWORD,
   port: DB_PORT,
+  ssl: {
+    rejectUnauthorized: false,
+  },
 });
 db.connect((err) => {
   if (err) {
