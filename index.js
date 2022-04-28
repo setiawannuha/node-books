@@ -28,5 +28,5 @@ app.get("/books", (req, res) => {
 
 const APP_PORT = PORT || 3003;
 app.listen(APP_PORT, () => {
-  console.log(`service running on port ${APP_PORT}`);
+  console.log(`service running at port ${APP_PORT}`);
 });
