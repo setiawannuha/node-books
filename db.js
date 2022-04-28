@@ -5,6 +5,7 @@ const {
   DB_PASSWORD,
   DB_PORT,
   DB_USERNAME,
+  NODE_ENV,
 } = require("./env");
 const db = new Client({
   user: DB_USERNAME,
@@ -13,7 +14,7 @@ const db = new Client({
   password: DB_PASSWORD,
   port: DB_PORT,
   ssl: {
-    rejectUnauthorized: false,
+    rejectUnauthorized: NODE_ENV === "prod" ? false : true,
   },
 });
 db.connect((err) => {
